@@ -14,6 +14,9 @@
     --mainLinkColor:rgb(30, 190,214);
     --mainBorderColor:#2b3031;
     --mainBgColor:#131415;
+    --formBgColor:#1e1f1f;
+    --inputBgColor:#333;
+    --inputTextColor:#fff;
 }
 
 
@@ -114,34 +117,35 @@ li{
 }
 
 .card--techstack{
-    border: 1px solid var(--mainBorderColor);
+    border: 2px solid var(--mainBorderColor);
     border-radius: 5px;
     padding: 0.5em 1em;
     align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card--project{
     padding-top: 1em;
     padding-bottom: 1em;
-    border-top: 1px solid var(--mainBorderColor);
+    border-top: 2px solid var(--mainBorderColor);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card--project a{
     color: var(--mainTextColor);
-
     transition: 0.3s;
 }
 
 .card--project a:hover{
     color: rgb(30, 190,214);
-
 }
 
 .card--work-history{
-    border-left: 1px solid var(--mainBorderColor);
+    border-left: 2px solid var(--mainBorderColor);
     margin-top: 3em;
     margin-bottom: 3em;
     padding-left: 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .line-break{
@@ -149,9 +153,7 @@ li{
     height: 1px;
 }
 
-
 @media(max-width:600px){
-
     .section--page{
         padding-top: 1em;
         padding-bottom: 1em;
@@ -177,4 +179,81 @@ li{
         border-left: none;
         padding-left: 0;
     }
+}
+
+/* Form CSS */
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid var(--mainBorderColor);
+    z-index: 9;
+    background-color: var(--mainBgColor);
+    width: 300px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+[data-theme="dark"] .form-popup {
+    background-color: var(--formBgColor);
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container h3 {
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: var(--mainTextColor);
+}
+
+.form-container label {
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: var(--mainTextColor);
+}
+
+.form-container input[type=text], .form-container input[type=email] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--mainBorderColor);
+    border-radius: 5px;
+    background: #f1f1f1;
+    color: #333;
+}
+
+[data-theme="dark"] .form-container input[type=text], 
+[data-theme="dark"] .form-container input[type=email] {
+    background: var(--inputBgColor);
+    color: var(--inputTextColor);
+}
+
+.form-container .btn {
+    background-color: var(--mainLinkColor);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.form-container .btn:hover {
+    background-color: #0b7c99;
+}
+
+.form-container .cancel {
+    background-color: #cc0000;
+}
+
+.form-container .cancel:hover {
+    background-color: #990000;
 }

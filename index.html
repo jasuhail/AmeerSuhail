@@ -45,77 +45,7 @@
                     <button type="button" class="btn" onclick="sendEmail()">Send</button>
                     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
                 </form>
-            </div>
-            
-            <style>
-                .form-popup {
-                    display: none;
-                    position: fixed;
-                    bottom: 0;
-                    right: 15px;
-                    border: 3px solid #f1f1f1;
-                    z-index: 9;
-                }
-            
-                .form-container {
-                    max-width: 300px;
-                    padding: 10px;
-                    background-color: white;
-                }
-            
-                .form-container input[type=text], .form-container input[type=email] {
-                    width: 100%;
-                    padding: 10px;
-                    margin: 5px 0 22px 0;
-                    border: none;
-                    background: #f1f1f1;
-                }
-            
-                .form-container input[type=text]:focus, .form-container input[type=email]:focus {
-                    background-color: #ddd;
-                    outline: none;
-                }
-            
-                .form-container .btn {
-                    background-color: #04AA6D;
-                    color: white;
-                    padding: 10px 20px;
-                    border: none;
-                    cursor: pointer;
-                    width: 100%;
-                    margin-bottom: 10px;
-                    opacity: 0.8;
-                }
-            
-                .form-container .cancel {
-                    background-color: red;
-                }
-            
-                .form-container .btn:hover, .form-container .cancel:hover {
-                    opacity: 1;
-                }
-            </style>
-            
-            <script>
-                function openForm() {
-                    document.getElementById("emailForm").style.display = "block";
-                }
-            
-                function closeForm() {
-                    document.getElementById("emailForm").style.display = "none";
-                }
-            
-                function sendEmail() {
-                    var name = document.getElementById('name').value;
-                    var email = document.getElementById('email').value;
-                    var position = document.getElementById('position').value;
-                    var company = document.getElementById('company').value;
-                    var subject = 'Request for Resume';
-                    var body = `Hi Ameer,\n\nMy name is ${name}, and I am the ${position} at ${company}. We are reaching out to formally request your updated resume for a potential opportunity at our company. I would like to receive your resume for job opportunities.\n\nRegards,\n${name}`;
-                    window.location.href = `mailto:ameer.suhail@ymail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                    closeForm();
-                }
-            </script>           
+            </div>         
 
             <section class="section--page">
                 <h2>Skills & Qualifications</h2>
@@ -217,6 +147,28 @@
             <div class="theme" id="theme-light" data-theme="light"></div>
             <div class="theme" id="theme-dark" data-theme="dark"></div>
         </div>
+
+                
+        <script>
+            function openForm() {
+                document.getElementById("emailForm").style.display = "block";
+            }
+        
+            function closeForm() {
+                document.getElementById("emailForm").style.display = "none";
+            }
+        
+            function sendEmail() {
+                var name = document.getElementById('name').value;
+                var email = document.getElementById('email').value;
+                var position = document.getElementById('position').value;
+                var company = document.getElementById('company').value;
+                var subject = 'Request for Resume';
+                var body = `Hi Ameer,\n\nMy name is ${name}, and I am the ${position} at ${company}. We are reaching out to formally request your updated resume for a potential opportunity at our company. I would like to receive your resume for job opportunities.\n\nRegards,\n${name}`;
+                window.location.href = `mailto:ameer.suhail@ymail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                closeForm();
+            }
+        </script> 
     </body>
     <script src="js/theme-switcher.js"></script>
 </html>
