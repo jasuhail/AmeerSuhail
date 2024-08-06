@@ -4,7 +4,7 @@ A digital resume website built based on the content from my personal REAL [resum
 
 ## Deploy your own digital resume
 
-1. clone repo `git clone https://github.com/divanov11/Digital-Resume` & update content to represent your information
+1. clone repo `git clone https://github.com/jasuhail/Resume1Test` & update content to represent your information
 2. Create a new github repo
 3. Commit and push to github.
 
