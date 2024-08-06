@@ -33,4 +33,4 @@ jobs:
         echo $version
 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag resume1:$VERSION
+      run: docker build -t my-image-name:$VERSION .
