@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap');
 
 :root{
-    --mainTextColor-light:#000;
+    --mainTextColor-light:#333;
     --secondaryTextColor-light:rgb(51 51 51);
     --mainLinkColor-light:#0da2b8;
     --mainBorderColor-light:rgb(218, 218, 218);
     --mainBgColor-light:rgb(249, 250,251);
+    --primaryColor: #3498db;
+    --secondaryColor: #f1c40f;
+    --accentColor: #e74c3c;
 }
 
 [data-theme="dark"]{
@@ -17,20 +20,22 @@
     --formBgColor:#1e1f1f;
     --inputBgColor:#333;
     --inputTextColor:#fff;
+    --primaryColor: #2ecc71;
+    --secondaryColor: #e67e73;
+    --accentColor: #9b59b6;
 }
-
-
 
 *{
     font-family: 'Readex Pro';
     line-height: 1.5em;
     box-sizing: border-box;
     color: var(--mainTextColor);
-    
 }
 
 body{
-    background-color: var(--mainBgColor);            
+    background-color: var(--mainBgColor);
+    padding: 0;
+    margin: 0;
 }
 
 p, span, li{
@@ -42,6 +47,11 @@ a{
     text-decoration: none;
     color: var(--mainLinkColor);
     font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+a:hover{
+    color: var(--primaryColor);
 }
 
 li{
@@ -52,11 +62,14 @@ li{
     max-width: 700px;
     margin: 0 auto;
     padding: 1em;
+    background-color: var(--mainBgColor);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .section--page{
     padding-top: 1em;
     padding-bottom: 1em;
+    border-bottom: 1px solid var(--mainBorderColor);
 }
 
 #wrapper--hero{
@@ -72,6 +85,7 @@ li{
 #user-name{
     font-size: 48px;
     line-height: 1em;
+    color: var(--primaryColor);
 }
 
 #profile-pic{
@@ -79,6 +93,7 @@ li{
     height: 150px;
     object-fit: cover;
     border-radius: 50%;
+    border: 2px solid var(--mainBorderColor);
 }
 
 #email{
@@ -96,17 +111,17 @@ li{
     font-weight: 300;
     color: var(--secondaryTextColor);
     font-size: 0.9em;
-    transition: 0.3s;
+    transition: color 0.3s ease;
 }
 
 #socials--list a:hover{
-    font-weight: 100;
-    color: var(--mainLinkColor);
-    font-size: 0.9em;
+    color: var(--primaryColor);
 }
 
 #qualifications--list{
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 #wrapper--techstack__items{
@@ -122,6 +137,7 @@ li{
     padding: 0.5em 1em;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--mainBgColor);
 }
 
 .card--project{
@@ -133,11 +149,11 @@ li{
 
 .card--project a{
     color: var(--mainTextColor);
-    transition: 0.3s;
+    transition: color 0.3s ease;
 }
 
 .card--project a:hover{
-    color: rgb(30, 190,214);
+    color: var(--primaryColor);
 }
 
 .card--work-history{
@@ -154,7 +170,7 @@ li{
 }
 
 @media(max-width:600px){
-    .section--page{
+   .section--page{
         padding-top: 1em;
         padding-bottom: 1em;
         margin-top: 3em;
@@ -175,7 +191,7 @@ li{
         flex-direction: column;
     }
 
-    .card--work-history{
+   .card--work-history{
         border-left: none;
         padding-left: 0;
     }
@@ -196,7 +212,7 @@ li{
     border-radius: 10px;
 }
 
-[data-theme="dark"] .form-popup {
+[data-theme="dark"].form-popup {
     background-color: var(--formBgColor);
 }
 
@@ -217,7 +233,7 @@ li{
     color: var(--mainTextColor);
 }
 
-.form-container input[type=text], .form-container input[type=email] {
+.form-container input[type=text],.form-container input[type=email] {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -227,14 +243,14 @@ li{
     color: #333;
 }
 
-[data-theme="dark"] .form-container input[type=text], 
-[data-theme="dark"] .form-container input[type=email] {
+[data-theme="dark"].form-container input[type=text], 
+[data-theme="dark"].form-container input[type=email] {
     background: var(--inputBgColor);
     color: var(--inputTextColor);
 }
 
 .form-container .btn {
-    background-color: var(--mainLinkColor);
+    background-color: var(--primaryColor);
     color: white;
     padding: 10px;
     border: none;
@@ -251,7 +267,7 @@ li{
 }
 
 .form-container .cancel {
-    background-color: #cc0000;
+    background-color: var(--accentColor);
 }
 
 .form-container .cancel:hover {

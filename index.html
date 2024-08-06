@@ -27,7 +27,7 @@
                 <div id="socials--list">
                     <a href="https://www.linkedin.com/in/dennis-ivanov/" target="_blank">Linkedin</a>
                     <a href="https://github.com/jasuhail" target="_blank">Github</a>
-                    <a href="#" onclick="openForm()">Request Resume via Email</a>
+                    <a href="#" onclick="openForm()">Get My Resume</a>
                 </div>
             </section>
             
@@ -164,7 +164,7 @@
                 var position = document.getElementById('position').value;
                 var company = document.getElementById('company').value;
                 var subject = 'Request for Resume';
-                var body = `Hi Ameer,\n\nMy name is ${name}, and I am the ${position} at ${company}. We are reaching out to formally request your updated resume for a potential opportunity at our company. I would like to receive your resume for job opportunities.\n\nRegards,\n${name}`;
+                var body = `Hi Ameer,\n\nMy name is ${name}, and I am the ${position} at ${company}. We are reaching out to formally request your updated resume for a potential opportunity at our company.\n\nRegards,\n${name}`;
                 window.location.href = `mailto:ameer.suhail@ymail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                 closeForm();
             }
