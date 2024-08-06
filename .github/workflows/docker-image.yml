@@ -1,0 +1,36 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Generate Version number
+      run : |
+        #!/bin/bash
+        
+        # Get the latest tag from the image
+        latest_tag=$(docker images --format '{{.Repository}}:{{.Tag}}' my-image-name | tail -n 1 | cut -d':' -f2)
+        
+        # Increment the version number
+        if [[ -z "$latest_tag" ]]; then
+          version=v1
+        else
+          version=$(echo $latest_tag | sed 's/v//')
+          version=$(expr $version + 1)
+          version=v$version
+        fi
+        
+        echo $version
+
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag resume1:$VERSION
