@@ -1,6 +1,6 @@
 # Ameer Suhail Digital Resume
 
-A digital resume website built based on the content from my personal REAL [resume](./assets/resume.pdf)
+A digital resume website built based on the content from my personal REAL [resume](https://jasuhail.github.io/AmeerSuhail/)
 
 ## Deploy your own digital resume
 
