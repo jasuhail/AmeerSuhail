@@ -1,217 +1,576 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Ameer Suhail - DevOps Engineer Portfolio</title>
-        <meta name="description" property="og:description" content="Ameer Suhail's DevOps Engineer Portfolio">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta property="og:type" content="Portfolio">
-        <meta name="author" content="Ameer Suhail">
-        <link rel="stylesheet" href="./styles/main.css">
-        <link rel="stylesheet" href="./styles/theme-switcher.css">
-        <link rel="icon" href="./assets/images/favicon.jpg" type="image/jpg">
-    </head>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cloud Solutions Architect Portfolio</title>
+<meta name="description" content="Portfolio of Cloud Solutions Architect - MLOps | DevSecOps | Kubernetes & Terraform Specialist" />
+<meta name="author" content="Cloud Solutions Architect" />
+<!-- Inter font from Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+<style>
+  /* Reset and base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0a0f24, #1a1e3a);
+    color: #e1e6ef;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a {
+    color: #009cff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover, a:focus {
+    color: #ff6f61;
+    outline: none;
+  }
+  #container-main {
+    max-width: 900px;
+    margin: 40px auto 80px;
+    padding: 0 20px;
+  }
+  /* Headings */
+  h1, h2, h3 {
+    margin-top: 0;
+    font-weight: 900;
+    color: #f9fafc;
+  }
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 24px;
+    border-bottom: 2px solid #ff6f61;
+    padding-bottom: 10px;
+    color: #fecdd3;
+  }
+  /* Section spacing */
+  .section-page {
+    margin-bottom: 56px;
+  }
+  /* Hero Section */
+  #wrapper-hero {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  #profile-pic {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ff6f61;
+    flex-shrink: 0;
+    box-shadow: 0 0 18px rgb(255 111 97 / 0.6);
+  }
+  #hero-text-container {
+    flex: 1;
+    min-width: 260px;
+  }
+  #user-name {
+    font-size: 2.6rem;
+    color: #ff6f61;
+    margin-bottom: 6px;
+    text-shadow: 0 0 4px #ff6f61;
+  }
+  #title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #a9b0cc;
+    margin-bottom: 12px;
+    letter-spacing: 0.04em;
+  }
+  #bio {
+    color: #cbd5f7;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+  #location {
+    color: #98a6c6;
+    font-size: 0.95rem;
+  }
+  #email-link {
+    display: inline-block;
+    margin-top: 14px;
+    font-weight: 700;
+    color: #009cff;
+    font-size: 1.1rem;
+    letter-spacing: 0.02em;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
+  }
+  #email-link:hover, #email-link:focus {
+    color: #ff6f61;
+    border-color: #ff6f61;
+    outline: none;
+  }
 
-    <body>
-        <div id="container--main">
-            <section id="wrapper--hero" class="section--page">
-                <img id="profile-pic" src="./assets/images/profile_pic.JPG">
+  /* Social Links */
+  #socials-list {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  #socials-list a,
+  #socials-list button {
+    background-color: #222a54;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 700;
+    box-shadow: 0 0 10px rgba(255,111,97,0.6);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    color: #fecdd3;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+  }
+  #socials-list a:hover, #socials-list a:focus,
+  #socials-list button:hover, #socials-list button:focus {
+    background-color: #ff6f61;
+    color: #fff;
+    box-shadow: 0 0 14px #ff6f61;
+    outline: none;
+  }
+  #resume-button {
+    cursor: pointer;
+  }
 
-                <div>
-                    <h1 id="user-name">Ameer Suhail</h1>
-                    <p id="bio">Cloud Solutions Architect - MLOps | DevSecOps | Kubernetes & Terraform Specialist</p>
-                    <p id="email">👉 ameer.suhail@ymail.com</p>
-                    <p>Chennai, India | Open to Remote | Open to Relocate</p>
-                </div>  
-            </section>
+  /* Form Popup */
+  .form-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #222a54;
+    padding: 28px 36px;
+    box-shadow: 0 8px 40px rgba(255,111,97,0.8);
+    border-radius: 20px;
+    z-index: 1000;
+    width: 360px;
+    max-width: 90vw;
+  }
+  .form-popup form {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-popup h3 {
+    margin-bottom: 20px;
+    color: #ff6f61;
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+  }
+  label {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    color: #e8eefe;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+  }
+  input[type="text"],
+  input[type="email"] {
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 2px solid #354a9d;
+    background-color: #0a0f24;
+    color: #f0f4ff;
+    font-size: 1rem;
+    outline-offset: 3px;
+    transition: border-color 0.3s ease;
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus {
+    border-color: #ff6f61;
+  }
+  .form-popup .btn {
+    margin-top: 26px;
+    padding: 14px 0;
+    border: none;
+    border-radius: 14px;
+    font-weight: 900;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    color: #fff;
+    background: linear-gradient(90deg, #009cff 0%, #ff6f61 100%);
+    cursor: pointer;
+    box-shadow: 0 0 20px #ff6f61;
+    transition: filter 0.3s ease;
+  }
+  .form-popup .btn:hover,
+  .form-popup .btn:focus {
+    filter: brightness(1.15);
+    outline: none;
+  }
+  .form-popup .cancel {
+    margin-top: 14px;
+    background-color: #354a9d;
+    box-shadow: none;
+    color: #a3b1da;
+  }
+  .form-popup .cancel:hover,
+  .form-popup .cancel:focus {
+    background-color: #2d4d8a;
+    color: #f0f4ff;
+  }
 
-            <section class="section--page">
-                <div id="socials--list">
-                    <a href="https://www.linkedin.com/in/ameersuhail-j/" target="_blank">Linkedin</a>
-                    <a href="https://github.com/jasuhail" target="_blank">Github</a>
-                    <a href="#" onclick="openForm()">Get My Resume</a>
-                </div>
-            </section>
-            
-            <div id="emailForm" class="form-popup">
-                <form class="form-container">
-                    <h3>Request Resume</h3>
-                    <label for="name"><b>Name</b></label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="email"><b>Email</b></label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="position"><b>Position</b></label>
-                    <input type="text" id="position" name="position" required>
-                    <label for="company"><b>Company Name</b></label>
-                    <input type="text" id="company" name="company" required>
-                    <button type="button" class="btn" onclick="sendEmail()">Send</button>
-                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-                </form>
-            </div>         
+  /* Qualifications List */
+  #qualifications-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  #qualifications-list li {
+    background: #283462;
+    padding: 16px 24px;
+    border-radius: 14px;
+    margin-bottom: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #dbe4f7;
+    box-shadow: 0 2px 8px rgb(255 111 97 / 0.25);
+  }
+  #qualifications-list li::before {
+    content: "✔";
+    color: #ff6f61;
+    font-weight: 900;
+    font-size: 1.25rem;
+  }
 
-            <section class="section--page">
-                <h2>Summary</h2>
-                <p>DevOps Engineer with 5.5 years of experience in automating infrastructure, implementing CI/CD pipelines, and architecting robust cloud solutions. Proficient in AWS, Azure, Kubernetes, Terraform, GitLab, Jenkins, and advanced monitoring tools. Total of 8 years in IT with comprehensive understanding of system and network administration.</p>
-            </section>
+  /* Tech Stack Cards */
+  #wrapper-techstack-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 24px;
+  }
+  .card-techstack {
+    background: #283462;
+    padding: 24px 32px;
+    border-radius: 18px;
+    color: #ced8ff;
+    font-weight: 700;
+    font-size: 1.05rem;
+    box-shadow: 0 4px 16px rgba(255,111,97,0.45);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .card-techstack:hover {
+    box-shadow: 0 8px 32px #ff6f61;
+    transform: translateY(-6px);
+  }
 
-            <section class="section--page">
-                <h2>Skills & Qualifications</h2>
-                <ul id="qualifications--list">
-                    <li>✔️ 5.5+ years experience in DevOps, Cloud, and Infrastructure Automation</li>
-                    <li>✔️ Extensive experience with AWS, Azure, Kubernetes, and Terraform</li>
-                    <li>✔️ Proven track record in CI/CD pipeline implementation and optimization</li>
-                    <li>✔️ Strong background in monitoring, logging, and infrastructure as code</li>
-                    <li>✔️ Cross-functional leadership and team collaboration skills</li>
-                </ul>
-            </section>
+  /* Work History Cards */
+  #work-history-wrapper .card-work-history {
+    background: #283462;
+    border-radius: 20px;
+    margin-bottom: 28px;
+    padding: 24px 32px;
+    box-shadow: 0 4px 22px rgba(255,111,97,0.6);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  #work-history-wrapper .card-work-history:hover {
+    box-shadow: 0 0 34px #ff6f61;
+    transform: translateY(-8px);
+  }
+  #work-history-wrapper strong {
+    display: block;
+    font-weight: 900;
+    color: #ff6f61;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+    letter-spacing: 0.03em;
+  }
+  #work-history-wrapper p {
+    font-weight: 600;
+    font-style: italic;
+    color: #b2badc;
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 1rem;
+  }
+  #work-history-wrapper ul {
+    padding-left: 24px;
+    margin-top: 0;
+    color: #d3d9ff;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  #work-history-wrapper ul li {
+    margin-bottom: 12px;
+    line-height: 1.7;
+  }
 
-            <section class="section--page">
-                <h2>Tech Stack</h2>
-                <div id="wrapper--techstack__items">
-                    <div class="card--techstack"><span>Cloud: AWS, Azure, GCP</span></div>
-                    <div class="card--techstack"><span>Containerization: Kubernetes, Docker, AKS, EKS</span></div>
-                    <div class="card--techstack"><span>CI/CD: GitLab, Jenkins, GitHub Actions, Azure DevOps</span></div>
-                    <div class="card--techstack"><span>IaC: Terraform, Ansible</span></div>
-                    <div class="card--techstack"><span>Monitoring: Prometheus, Grafana, CloudWatch, App Insights</span></div>
-                    <div class="card--techstack"><span>Databases: MongoDB, MySQL, Postgres</span></div>
-                    <div class="card--techstack"><span>Scripting: Bash, Python</span></div>
-                    <div class="card--techstack"><span>Security: DevSecOps, Azure AD, IAM</span></div>
-                </div>
-            </section>
+  /* Line break */
+  .line-break {
+    border-top: 2px solid #ff6f61;
+    margin: 24px 0 32px;
+  }
 
-            <section id="work-history-wrapper" class="section--page">
-                <h2>Work History</h2>
+  /* Certifications & Education Projects Cards */
+  .card-project {
+    background: #283462;
+    border-radius: 18px;
+    padding: 18px 24px;
+    margin-bottom: 20px;
+    color: #f7d6d0;
+    font-weight: 700;
+    font-size: 1.05rem;
+    box-shadow: 0 0 14px rgba(255,111,97,0.4);
+    transition: box-shadow 0.4s ease;
+  }
+  .card-project:hover, .card-project:focus-within {
+    box-shadow: 0 0 28px #ff6f61;
+  }
+  .card-project a {
+    color: #ff6f61;
+    font-weight: 800;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+  .card-project a:hover, .card-project a:focus {
+    color: #ffd0c2;
+    outline: none;
+  }
 
-                <div class="card--work-history">
-                    <strong>🚧 Senior Technical Lead (DevSecOps Engineer) | HCI.Tech</strong>
-                    <p>11/2024 - Present</p>
-                    <ul>
-                        <li>Designed architecture for big data products to isolate development and deployment in data-oriented projects</li>
-                        <li>Implemented DevOps branching strategy to streamline automated tests and deployment</li>
-                        <li>Created pipelines to test code for vulnerability and quality, standardizing deployments</li>
-                        <li>Designed data pipeline to automate data movement through Medallion Architecture layers</li>
-                        <li>Upgraded servers for applications deployed in Azure VMs using release pipelines with zero downtime</li>
-                    </ul>
-                </div>
+  /* Responsive layout adjustments */
+  @media (max-width: 640px) {
+    #wrapper-hero {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    #profile-pic {
+      width: 110px;
+      height: 110px;
+      margin-bottom: 20px;
+      border-width: 3px;
+    }
+    #hero-text-container {
+      width: 100%;
+    }
+    #socials-list {
+      justify-content: center;
+    }
+  }
+</style>
+</head>
+<body>
+  <main id="container-main" role="main">
+    <section id="wrapper-hero" class="section-page" aria-label="Profile Overview">
+      <img id="profile-pic" src="./assets/images/profile_pic.JPG" alt="Profile portrait showing Cloud Solutions Architect" />
+      <div id="hero-text-container">
+        <h1 id="user-name">Cloud Solutions Architect</h1>
+        <p id="title">MLOps | DevSecOps | Kubernetes &amp; Terraform Specialist</p>
+        <p id="bio">Senior Cloud Solutions Architect with expertise in scalable infrastructure, automation, and security.</p>
+        <p id="location">Chennai, India | Open to Remote | Willing to Relocate</p>
+        <a href="mailto:ameer.suhail@ymail.com" id="email-link" aria-label="Send Email">ameer.suhail@ymail.com</a>
+      </div>
+    </section>
 
-                <div class="line-break"></div>
+    <section class="section-page" aria-label="Social media links and resume request">
+      <nav id="socials-list" aria-label="Social media links">
+        <a href="https://www.linkedin.com/in/ameersuhail-j/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">LinkedIn</a>
+        <a href="https://github.com/jasuhail" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a>
+        <button id="resume-button" role="button" aria-haspopup="dialog" aria-controls="emailForm" aria-expanded="false" onclick="openForm()">Get My Resume</button>
+      </nav>
+    </section>
 
-                <div class="card--work-history">
-                    <strong>🚧 IT Analyst (DevOps Engineer) | TCS</strong>
-                    <p>10/2022 - 10/2024</p>
-                    <ul>
-                        <li>Designed and maintained CI/CD pipelines leading to 100% error-free bi-weekly deployments</li>
-                        <li>Engineered automated build/release pipelines for mobile apps, reducing manual efforts</li>
-                        <li>Migrated code repositories and pipelines from Azure DevOps to GitHub Actions, improving efficiency by 20%</li>
-                        <li>Automated deployment of 20+ static apps on Azure Web Apps, saving 10 hours weekly</li>
-                        <li>Managed cloud infrastructure with Terraform, improving resource configuration</li>
-                        <li>Optimized AWS CloudWatch monitoring for proactive performance management</li>
-                        <li>Implemented Terraform-based CI/CD pipelines, increasing deployment reliability by 15%</li>
-                        <li>Trained team members on DevOps best practices and new technologies</li>
-                    </ul>
-                </div>
+    <section id="emailForm" class="form-popup" role="dialog" aria-modal="true" aria-labelledby="formTitle" aria-describedby="formDesc" tabindex="-1">
+      <form class="form-container" onsubmit="return false;">
+        <h3 id="formTitle">Request Resume</h3>
+        <p id="formDesc" style="color:#f7d6d0; font-size:0.9rem; margin-bottom:12px;">Please fill out contact details</p>
+        <label for="name"><b>Name</b></label>
+        <input type="text" id="name" name="name" required autocomplete="name" />
+        <label for="email"><b>Email</b></label>
+        <input type="email" id="email" name="email" required autocomplete="email" />
+        <label for="position"><b>Position</b></label>
+        <input type="text" id="position" name="position" required autocomplete="organization-title" />
+        <label for="company"><b>Company Name</b></label>
+        <input type="text" id="company" name="company" required autocomplete="organization" />
+        <button type="button" class="btn" onclick="sendEmail()">Send</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </section>
+    
+    <section class="section-page" aria-label="Summary">
+      <h2>Summary</h2>
+      <p>Cloud Solutions Architect with over 5.5 years experience automating infrastructure and architecting scalable cloud and machine learning operations environments. Skilled in Kubernetes orchestration, Terraform automation, CI/CD pipeline design, and DevSecOps practices to enhance security and reliability.</p>
+    </section>
 
-                <div class="line-break"></div>
+    <section class="section-page" aria-label="Skills and Qualifications">
+      <h2>Skills &amp; Qualifications</h2>
+      <ul id="qualifications-list">
+        <li>5.5+ years experience in Cloud Solutions Architecture, MLOps and DevSecOps</li>
+        <li>Proficient with Kubernetes, Terraform, and container orchestration</li>
+        <li>Experienced designing secure and automated CI/CD pipelines</li>
+        <li>Strong infrastructure automation with Terraform and Ansible</li>
+        <li>Skilled in cloud security, monitoring, and compliance management</li>
+      </ul>
+    </section>
 
-                <div class="card--work-history">
-                    <strong>🚧 DevOps Engineer | Pride Global</strong>
-                    <p>01/2020 - 10/2022</p>
-                    <ul>
-                        <li>Orchestrated management of Launch ATS and Launch VMS, improving uptime by 25%</li>
-                        <li>Procured infrastructure using Terraform from GitLab CI/CD pipelines</li>
-                        <li>Deployed Kubernetes clusters using Rancher UI in EC2 instances</li>
-                        <li>Optimized AWS services (EC2, ELB, IAM, S3, RDS) for high availability</li>
-                        <li>Maintained AWS infrastructure with 99.9% uptime for critical components</li>
-                        <li>Automated MongoDB backups from EC2 to S3 with encryption and retention</li>
-                        <li>Deployed OpenVPN on AWS EC2, reducing costs by 50%</li>
-                    </ul>
-                </div>
+    <section class="section-page" aria-label="Technical Stack">
+      <h2>Tech Stack</h2>
+      <div id="wrapper-techstack-items">
+        <div class="card-techstack">Cloud: AWS, Azure, Google Cloud Platform</div>
+        <div class="card-techstack">Containerization: Kubernetes, Docker, EKS, AKS</div>
+        <div class="card-techstack">CI/CD: GitLab, Jenkins, GitHub Actions, Azure DevOps</div>
+        <div class="card-techstack">Infrastructure as Code: Terraform, Ansible</div>
+        <div class="card-techstack">Monitoring & Logging: Prometheus, Grafana, CloudWatch</div>
+        <div class="card-techstack">Scripting: Bash, Python</div>
+        <div class="card-techstack">Security: DevSecOps, IAM, Azure AD</div>
+      </div>
+    </section>
 
-                <div class="line-break"></div>
+    <section id="work-history-wrapper" class="section-page" aria-label="Work History">
+      <h2>Work History</h2>
 
-                <div class="card--work-history">
-                    <strong>🚧 Senior Service Desk Engineer | Alchemy Techsol (Client: Virtusa)</strong>
-                    <p>09/2018 - 01/2020</p>
-                    <ul>
-                        <li>Managed team of 6-8 members, overseeing severity incidents</li>
-                        <li>Configured and managed Mac machines using JAMF with Azure AD integration</li>
-                        <li>Coordinated incident management during high-severity outages</li>
-                    </ul>
-                </div>
+      <article class="card-work-history">
+        <strong>Senior Technical Lead (DevSecOps Engineer) | HCI.Tech</strong>
+        <p>11/2024 - Present</p>
+        <ul>
+          <li>Designed architecture for big data and isolated deployment for data products</li>
+          <li>Implemented DevOps branching strategy for seamless CI/CD</li>
+          <li>Created pipelines to test code vulnerability and quality</li>
+          <li>Automated data movement with Medallion Architecture layers</li>
+          <li>Upgraded Azure VM servers using release pipelines with zero downtime</li>
+        </ul>
+      </article>
 
-                <div class="line-break"></div>
+      <div class="line-break"></div>
 
-                <div class="card--work-history">
-                    <strong>🚧 Service Desk Engineer | Future Focus Infotech (Client: Virtusa)</strong>
-                    <p>10/2017 - 08/2018</p>
-                    <ul>
-                        <li>Provided 24/7 L2 support for end-users via remote tools</li>
-                        <li>Troubleshot VMs, IBM Lotus Notes Domino, and Intune MDM issues</li>
-                    </ul>
-                </div>
-            </section>
+      <article class="card-work-history">
+        <strong>IT Analyst (DevOps Engineer) | TCS</strong>
+        <p>10/2022 - 10/2024</p>
+        <ul>
+          <li>Designed and maintained CI/CD pipelines delivering error-free bi-weekly deployments</li>
+          <li>Automated build/release pipelines for mobile apps</li>
+          <li>Refactored code repos & pipelines from Azure DevOps to GitHub Actions improving efficiency by 20%</li>
+          <li>Automated deployment of static apps on Azure Web Apps, saving 10 hours weekly</li>
+          <li>Maintained cloud infrastructure with Terraform</li>
+          <li>Optimized AWS CloudWatch monitoring for improved performance</li>
+          <li>Implemented Terraform-based pipelines increasing reliability by 15%</li>
+          <li>Trained teams on DevOps best practices</li>
+        </ul>
+      </article>
 
-            <section class="section--page">
-                <h2>Certifications</h2>
-                <div class="card--project">
-                    <span>🏆 AWS Solution Architect - Associate | 2021</span>
-                </div>
-                <div class="card--project">
-                    <span>🏆 Microsoft Certified: Azure Fundamentals | 2022</span>
-                </div>
-                <div class="card--project">
-                    <span>🏆 Microsoft Certified: Azure Security, Compliance, Identity Fundamentals | 2023</span>
-                </div>
-                <div class="card--project">
-                    <span>🏆 Terraform in Cloud (O'Reilly) | 2024</span>
-                </div>
-            </section>
+      <div class="line-break"></div>
 
-            <section class="section--page">
-                <h2>Education</h2>
-                <div class="card--project">
-                    <span>🎓 B.Tech in Aeronautical Engineering | VelTech University (GPA: 8.09)</span>
-                </div>
-                <div class="card--project">
-                    <span>🎓 High School in Computer Science | St. John's Vestry AHISS</span>
-                </div>
-            </section>
+      <article class="card-work-history">
+        <strong>DevOps Engineer | Pride Global</strong>
+        <p>01/2020 - 10/2022</p>
+        <ul>
+          <li>Managed Launch ATS and VMS, improving uptime by 25%</li>
+          <li>Provisioned infrastructure via Terraform with GitLab CI/CD</li>
+          <li>Deployed Kubernetes clusters using Rancher UI on EC2</li>
+          <li>Optimized AWS EC2, ELB, IAM, S3, RDS for high availability</li>
+          <li>Maintained AWS infrastructure with 99.9% uptime</li>
+          <li>Automated MongoDB backups with encryption and retention</li>
+          <li>Deployed OpenVPN on EC2, reducing costs by 50%</li>
+        </ul>
+      </article>
 
-            <section class="section--page">
-                <h2>Projects</h2>
-                <div class="card--project">
-                    <a href="https://github.com/jasuhail/openvpn-aws-terraform"><span>🔗 </span>OpenVPN AWS - Terraform</a>
-                    <p>Personal VPN setup that can be deployed in any AWS region within 5 minutes</p>
-                </div>
-            </section>
-        </div>
+      <div class="line-break"></div>
 
-        <div id="theme-switcher">
-            <div class="theme" id="theme-light" data-theme="light"></div>
-            <div class="theme" id="theme-dark" data-theme="dark"></div>
-        </div>
+      <article class="card-work-history">
+        <strong>Senior Service Desk Engineer | Alchemy Techsol (Client: Virtusa)</strong>
+        <p>09/2018 - 01/2020</p>
+        <ul>
+          <li>Managed team handling severity incidents</li>
+          <li>Configured/manage Mac machines using JAMF with Azure AD integration</li>
+          <li>Led incident management during critical outages</li>
+        </ul>
+      </article>
 
-        <script>
-            function openForm() {
-                document.getElementById("emailForm").style.display = "block";
-            }
-        
-            function closeForm() {
-                document.getElementById("emailForm").style.display = "none";
-            }
-        
-            function sendEmail() {
-                var name = document.getElementById('name').value;
-                var email = document.getElementById('email').value;
-                var position = document.getElementById('position').value;
-                var company = document.getElementById('company').value;
-                var subject = 'Request for Resume - Ameer Suhail';
-                var body = `Hi Ameer,\n\nMy name is ${name}, and I am the ${position} at ${company}. We are reaching out to formally request your updated resume for a potential opportunity at our company.\n\nRegards,\n${name}`;
-                window.location.href = `mailto:ameer.suhail@ymail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                closeForm();
-            }
-        </script> 
-        <script src="js/theme-switcher.js"></script>
-    </body>
+      <div class="line-break"></div>
+
+      <article class="card-work-history">
+        <strong>Service Desk Engineer | Future Focus Infotech (Client: Virtusa)</strong>
+        <p>10/2017 - 08/2018</p>
+        <ul>
+          <li>Provided 24/7 L2 user support via remote tools</li>
+          <li>Troubleshot VMs, IBM Lotus Notes Domino, and Intune MDM issues</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section-page" aria-label="Certifications">
+      <h2>Certifications</h2>
+      <div class="card-project">AWS Solution Architect - Associate | 2021</div>
+      <div class="card-project">Microsoft Certified: Azure Fundamentals | 2022</div>
+      <div class="card-project">Microsoft Certified: Azure Security, Compliance, Identity Fundamentals | 2023</div>
+      <div class="card-project">Terraform in Cloud (O'Reilly) | 2024</div>
+    </section>
+
+    <section class="section-page" aria-label="Education">
+      <h2>Education</h2>
+      <div class="card-project">B.Tech in Aeronautical Engineering | VelTech University (GPA: 8.09)</div>
+      <div class="card-project">High School in Computer Science | St. John's Vestry AHISS</div>
+    </section>
+
+    <section class="section-page" aria-label="Projects">
+      <h2>Projects</h2>
+      <div class="card-project">
+        <a href="https://github.com/jasuhail/openvpn-aws-terraform" target="_blank" rel="noopener noreferrer">OpenVPN AWS - Terraform</a>
+        <p>Personal VPN setup deployable in any AWS region within 5 minutes</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Form Popup Controls
+    const form = document.getElementById('emailForm');
+    const resumeBtn = document.getElementById('resume-button');
+
+    function openForm() {
+      form.style.display = 'block';
+      resumeBtn.setAttribute('aria-expanded', 'true');
+      // Move keyboard focus into the form for accessibility
+      form.focus();
+      document.getElementById('name').focus();
+    }
+    function closeForm() {
+      form.style.display = 'none';
+      resumeBtn.setAttribute('aria-expanded', 'false');
+      resumeBtn.focus();
+    }
+
+    function sendEmail() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const position = document.getElementById('position').value.trim();
+      const company = document.getElementById('company').value.trim();
+      if (!name || !email || !position || !company) {
+        alert('Please fill all required fields.');
+        return;
+      }
+      const subject = 'Request for Resume - Cloud Solutions Architect';
+      const body = `Hi,\n\nMy name is ${name}, and I am the ${position} at ${company}. We are reaching out to request your updated resume for a potential opportunity.\n\nRegards,\n${name}`;
+      window.location.href = `mailto:ameer.suhail@ymail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      closeForm();
+    }
+
+    // Accessibility: close form on Escape key
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape' && form.style.display === 'block') {
+        closeForm();
+      }
+    });
+  </script>
+</body>
 </html>
