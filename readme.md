@@ -1,6 +1,6 @@
 # Ameer Suhail Digital Resume
 
-A digital resume website built based on the content from my personal REAL [resume](https://jasuhail.github.io/AmeerSuhail/)
+A digital resume website built based on the content from my personal REAL [![Netlify Status](https://api.netlify.com/api/v1/badges/69200f36-c518-414e-9a1b-a5d4527b462a/deploy-status)](https://app.netlify.com/projects/stately-bombolone-85f779/deploys)
 
 ## Deploy your own digital resume
 
